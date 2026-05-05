@@ -1,0 +1,66 @@
+# dependencies
+
+node_modules
+.bun
+bun.lockb
+
+# build output
+
+dist
+build
+
+# logs
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-debug.log*
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# environment
+
+.env
+.env.*
+!.env.example
+
+# prisma
+
+prisma/migrations
+*.db
+
+# coverage
+
+coverage
+
+# IDE / editor
+
+.vscode
+.idea
+*.swp
+*.swo
+
+# temp files
+
+tmp
+temp
+
+# cache
+
+.cache
+.next
+
+# test output
+
+test-results
+
+# misc
+
+*.pem
+*.key
+*.crt
