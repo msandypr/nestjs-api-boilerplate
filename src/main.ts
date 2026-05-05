@@ -6,6 +6,8 @@ import rateLimit from "express-rate-limit";
 
 import type { Request, Response } from "express";
 
+import { AllExceptionsFilter } from "./common/filters/http-exception.filter";
+import { TransformInterceptor } from "./common/interceptors/transform.interceptor";
 import { AppModule } from "./app.module";
 
 async function bootstrap() {
@@ -44,6 +46,10 @@ async function bootstrap() {
 
   // CORS
   app.enableCors();
+
+  // Global filter & interceptor
+  app.useGlobalFilters(new AllExceptionsFilter());
+  app.useGlobalInterceptors(new TransformInterceptor());
 
   // API prefix
   app.setGlobalPrefix("api", {
